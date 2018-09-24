@@ -65,7 +65,7 @@
             android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
 
-    <Button
+    <android.support.design.button.MaterialButton
         android:id="@+id/signInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

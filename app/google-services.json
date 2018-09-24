@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "235223515703",
+    "firebase_url": "https://smart-vet.firebaseio.com",
+    "project_id": "smart-vet",
+    "storage_bucket": "smart-vet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235223515703:android:9af7ad029102308e",
+        "android_client_info": {
+          "package_name": "pe.com.smartvet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235223515703-5ec4vrc8dpahc4f6olr5ngikmj4cln7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pe.com.smartvet",
+            "certificate_hash": "fe79f7ba2e657e09d6c3c613a291093a08858f56"
+          }
+        },
+        {
+          "client_id": "235223515703-1j28v1t77fbdsgat2l8no1ergco6mbm5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpj5cufvAniQbo7C_-YA8pAch6m5SSAcY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235223515703-1j28v1t77fbdsgat2l8no1ergco6mbm5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

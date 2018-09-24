@@ -2,8 +2,6 @@ package pe.com.smartvet.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -18,11 +16,14 @@ import android.widget.TextView;
 
 import com.androidnetworking.widget.ANImageView;
 
-import java.util.List;
-
 import pe.com.smartvet.R;
 import pe.com.smartvet.SmartVetApp;
+import pe.com.smartvet.fragments.ClinicHistoryFragment;
+import pe.com.smartvet.fragments.OwnerFragment;
+import pe.com.smartvet.fragments.PetFragment;
 import pe.com.smartvet.fragments.ProductFragment;
+import pe.com.smartvet.fragments.ReportFragment;
+import pe.com.smartvet.fragments.UserFragment;
 import pe.com.smartvet.models.Vet;
 
 public class MainActivity extends AppCompatActivity
@@ -64,26 +65,29 @@ public class MainActivity extends AppCompatActivity
         displayNameTextView.setText(vet.getName());
         emailTextView.setText(vet.getEmail());
 
-        //navigateAccordingTo(R.id.nav_user);
+        navigateAccordingTo(R.id.nav_user);
     }
 
     private Fragment getFragmentFor(int id) {
         switch (id) {
             case R.id.nav_user:
                 toolbar.setTitle(R.string.nav_option_user);
-                //return new UserFragment();
+                return new UserFragment();
             case R.id.nav_clinic_histoy:
                 toolbar.setTitle(R.string.nav_option_clinic_history);
-                //return new PetFragment();
+                return new ClinicHistoryFragment();
             case R.id.nav_pet:
                 toolbar.setTitle(R.string.nav_option_pet);
-                //return new PetFragment();
+                return new PetFragment();
             case R.id.nav_owner:
                 toolbar.setTitle(R.string.nav_option_owner);
-                //return new PetFragment();
+                return new OwnerFragment();
             case R.id.nav_product:
                 toolbar.setTitle(R.string.nav_option_product);
                 return new ProductFragment();
+            case R.id.nav_report:
+                toolbar.setTitle(R.string.nav_option_report);
+                return new ReportFragment();
         }
         return null;
     }
@@ -149,7 +153,12 @@ public class MainActivity extends AppCompatActivity
             navigateAccordingTo(id);
         }  else if (id == R.id.nav_product) {
             navigateAccordingTo(id);
-        } else if (id == R.id.nav_sesion) {
+        }  else if (id == R.id.nav_report) {
+            navigateAccordingTo(id);
+        } else if (id == R.id.nav_session) {
+            SplashActivity.changeData(MainActivity.this,"user" ,"");
+            SplashActivity.changeData(MainActivity.this,"password" ,"");
+            SplashActivity.changeData(MainActivity.this,"token" ,"");
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
         }

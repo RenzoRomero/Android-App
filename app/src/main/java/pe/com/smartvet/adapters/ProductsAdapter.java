@@ -17,6 +17,7 @@ import java.util.List;
 
 import pe.com.smartvet.R;
 import pe.com.smartvet.SmartVetApp;
+import pe.com.smartvet.activities.AboutProductActivity;
 import pe.com.smartvet.models.Product;
 
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
@@ -45,15 +46,15 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         holder.nameTextView.setText(productList.get(position).getName());
         holder.descriptionTextView.setText(productList.get(position).getDescription());
         holder.priceTextView.setText("S/." + productList.get(position).getPrice().toString());
-        /*holder.productCardView.setOnClickListener(new View.OnClickListener() {
+        holder.productCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SmartVetApp.getInstance().setCurrentPet(pets.get(position));
+                SmartVetApp.getInstance().setProduct(productList.get(position));
                 v.getContext()
                         .startActivity(new Intent(v.getContext(),
-                                AboutPetActivity.class));
+                                AboutProductActivity.class));
             }
-        });*/
+        });
     }
 
     @Override

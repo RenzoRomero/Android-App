@@ -85,6 +85,9 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             SmartVetApp.getInstance().setToken("Bearer " + response.getString("token"));
                             SmartVetApp.getInstance().setVet(Vet.build(response.getJSONObject("vet")));
+                            SmartVetApp.getInstance().getVet().setPassword(Objects.requireNonNull(passwordTextInputLayout.getEditText()).getText().toString());
+                            SplashActivity.setData(LoginActivity.this,"user" ,SmartVetApp.getInstance().getVet().getEmail());
+                            SplashActivity.setData(LoginActivity.this,"password" ,SmartVetApp.getInstance().getVet().getPassword());
                             Toast.makeText(getApplicationContext(),  getString(R.string.hello) + " " + SmartVetApp.getInstance().getVet().getName(), Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
                             finish();

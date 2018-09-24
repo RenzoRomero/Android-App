@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.androidnetworking.AndroidNetworking;
 
+import pe.com.smartvet.models.Owner;
+import pe.com.smartvet.models.Product;
 import pe.com.smartvet.models.Vet;
 import pe.com.smartvet.network.SmartVetService;
 
@@ -41,6 +43,24 @@ public class SmartVetApp extends Application {
 
     public SmartVetApp setToken(String token) {
         smartVetService.setCurrentToken(token);
+        return this;
+    }
+
+    public Owner getOwner() {
+        return smartVetService.getCurrentOwner();
+    }
+
+    public SmartVetApp setOwner(Owner owner) {
+        smartVetService.setCurrentOwner(owner);
+        return this;
+    }
+
+    public Product getProduct() {
+        return smartVetService.getCurrentProduct();
+    }
+
+    public SmartVetApp setProduct(Product product) {
+        smartVetService.setCurrentProduct(product);
         return this;
     }
 }

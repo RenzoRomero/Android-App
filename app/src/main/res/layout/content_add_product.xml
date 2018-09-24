@@ -8,4 +8,130 @@
     tools:context=".activities.AddProductActivity"
     tools:showIn="@layout/activity_add_product">
 
+    <com.androidnetworking.widget.ANImageView
+        android:id="@+id/photoANImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="8dp"
+        android:src="@mipmap/ic_launcher"
+        android:elevation="6dp" />
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/galeryButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="@id/photoANImageView"
+        app:layout_constraintStart_toEndOf="@id/photoANImageView"
+        app:layout_constraintBottom_toBottomOf="@id/photoANImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/galeryButton"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:onClick="galeryClick"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/brandTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photoANImageView"
+        android:textColorHint="@color/colorAccent"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:errorTextAppearance="@style/TextAppearance.Design.Error"
+        app:counterOverflowTextAppearance="@style/TextAppearance.Design.Error" >
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/brandTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/brand_hint"
+            android:inputType="textCapWords" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/nameTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brandTextInputLayout"
+        android:textColorHint="@color/colorAccent"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:errorTextAppearance="@style/TextAppearance.Design.Error"
+        app:counterOverflowTextAppearance="@style/TextAppearance.Design.Error" >
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/nameTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_hint"
+            android:inputType="textCapSentences" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+    android:id="@+id/descriptionTextInputLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout"
+    android:textColorHint="@color/colorAccent"
+    app:counterEnabled="true"
+    app:counterMaxLength="30"
+    app:errorTextAppearance="@style/TextAppearance.Design.Error"
+    app:counterOverflowTextAppearance="@style/TextAppearance.Design.Error" >
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/descriptionTextInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/description_hint"
+        android:inputType="textCapSentences" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/priceTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextInputLayout"
+        android:textColorHint="@color/colorAccent"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/TextAppearance.Design.Error"
+        app:counterOverflowTextAppearance="@style/TextAppearance.Design.Error" >
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/priceTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/price_hint"
+            android:inputType="numberDecimal" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/quantityTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceTextInputLayout"
+        android:textColorHint="@color/colorAccent"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/TextAppearance.Design.Error"
+        app:counterOverflowTextAppearance="@style/TextAppearance.Design.Error" >
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/quantityTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/quantity_hint"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+
 </android.support.constraint.ConstraintLayout>

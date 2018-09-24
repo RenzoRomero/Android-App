@@ -1,7 +1,5 @@
 package pe.com.smartvet.fragments;
 
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -28,46 +26,47 @@ import java.util.List;
 
 import pe.com.smartvet.R;
 import pe.com.smartvet.SmartVetApp;
-import pe.com.smartvet.activities.AddProductActivity;
-import pe.com.smartvet.adapters.ProductsAdapter;
-import pe.com.smartvet.models.Product;
+import pe.com.smartvet.adapters.OwnersAdapter;
+import pe.com.smartvet.models.Owner;
 import pe.com.smartvet.network.SmartVetService;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProductFragment extends Fragment implements SearchView.OnQueryTextListener {
-    private RecyclerView productsRecyclerView;
-    private ProductsAdapter productsAdapter;
-    private RecyclerView.LayoutManager productsLayoutManager;
-    private FloatingActionButton addProductFloatingActionButton;
-    private List<Product> productList;
+public class OwnerFragment extends Fragment implements SearchView.OnQueryTextListener {
+    private RecyclerView ownersRecyclerView;
+    private OwnersAdapter ownersAdapter;
+    private RecyclerView.LayoutManager ownersLayoutManager;
+    private FloatingActionButton addOwnerFloatingActionButton;
+    private List<Owner> ownerList;
 
-    public ProductFragment() {
+
+    public OwnerFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_product, container, false);
+        View view = inflater.inflate(R.layout.fragment_owner, container, false);
         setHasOptionsMenu(true);
-        productsRecyclerView = view.findViewById(R.id.productsRecyclerView);
-        productList = new ArrayList<>();
-        productsAdapter = (new ProductsAdapter()).setProducts(productList);
-        productsLayoutManager = new LinearLayoutManager(view.getContext());
-        productsRecyclerView.setAdapter(productsAdapter);
-        productsRecyclerView.setLayoutManager(productsLayoutManager);
-        addProductFloatingActionButton = view.findViewById(R.id.addProductFloatingActionButton);
-        addProductFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+        ownersRecyclerView = view.findViewById(R.id.ownersRecyclerView);
+        ownerList = new ArrayList<>();
+        ownersAdapter = (new OwnersAdapter()).setOwners(ownerList);
+        ownersLayoutManager = new LinearLayoutManager(view.getContext());
+        ownersRecyclerView.setAdapter(ownersAdapter);
+        ownersRecyclerView.setLayoutManager(ownersLayoutManager);
+        /*addOwnerFloatingActionButton = view.findViewById(R.id.addOwnerFloatingActionButton);
+        addOwnerFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 v.getContext()
-                        .startActivity(new Intent(v.getContext(), AddProductActivity.class));
+                        .startActivity(new Intent(v.getContext(), AddOwnerActivity.class));
             }
-        });
-        getProducts();
+        });*/
+        getOwners();
         return view;
     }
 
@@ -81,9 +80,9 @@ public class ProductFragment extends Fragment implements SearchView.OnQueryTextL
         searchView.setOnQueryTextListener(this);
     }
 
-    private void getProducts() {
+    private void getOwners() {
         AndroidNetworking
-                .get(SmartVetService.PRODUCT_URL)
+                .get(SmartVetService.OWNER_URL)
                 .addHeaders("Authorization", SmartVetApp.getInstance().getToken())
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -91,14 +90,15 @@ public class ProductFragment extends Fragment implements SearchView.OnQueryTextL
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            productList = Product.build(response.getJSONArray("products"));
-                            productsAdapter.setProducts(productList);
-                            productsAdapter.notifyDataSetChanged();
+                            ownerList = Owner.build(response.getJSONArray("owners"));
+                            ownersAdapter.setOwners(ownerList);
+                            ownersAdapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
                     }
+
                     @Override
                     public void onError(ANError anError) {
                     }
@@ -113,22 +113,22 @@ public class ProductFragment extends Fragment implements SearchView.OnQueryTextL
     @Override
     public boolean onQueryTextChange(String s) {
 
-        String productInput = s.toLowerCase();
-        List<Product> newList = new ArrayList<>();
+        String ownerInput = s.toLowerCase();
+        List<Owner> newList = new ArrayList<>();
 
-        for(Product product : productList) {
-            if(product.getName().toLowerCase().contains(productInput)) {
-                newList.add(product);
+        for (Owner owner : ownerList) {
+            if (owner.getName().toLowerCase().contains(ownerInput)) {
+                newList.add(owner);
             }
         }
 
-        productsAdapter.updateList(newList);
+        ownersAdapter.updateList(newList);
         return true;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        getProducts();
+        getOwners();
     }
 }
