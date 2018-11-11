@@ -9,17 +9,13 @@
             android:icon="@drawable/ic_account_circle_black_24dp"
             android:title="@string/nav_option_user" />
         <item
-            android:id="@+id/nav_clinic_histoy"
-            android:icon="@drawable/ic_healing_black_24dp"
-            android:title="@string/nav_option_clinic_history" />
+            android:id="@+id/nav_owner"
+            android:icon="@drawable/ic_contacts_black_24dp"
+            android:title="@string/nav_option_owner" />
         <item
             android:id="@+id/nav_pet"
             android:icon="@drawable/ic_pets_black_24dp"
             android:title="@string/nav_option_pet" />
-        <item
-            android:id="@+id/nav_owner"
-            android:icon="@drawable/ic_contacts_black_24dp"
-            android:title="@string/nav_option_owner" />
         <item
             android:id="@+id/nav_product"
             android:icon="@drawable/ic_shopping_cart_black_24dp"
@@ -28,6 +24,10 @@
             android:id="@+id/nav_report"
             android:icon="@drawable/ic_insert_drive_file_black_24dp"
             android:title="@string/nav_option_report" />
+        <item
+            android:id="@+id/nav_promo"
+            android:icon="@drawable/ic_card_giftcard_black_24dp"
+            android:title="@string/nav_option_promo" />
         <item
             android:id="@+id/nav_session"
             android:icon="@drawable/ic_power_settings_new_black_24dp"

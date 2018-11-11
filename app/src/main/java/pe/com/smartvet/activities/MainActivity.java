@@ -18,7 +18,6 @@ import com.androidnetworking.widget.ANImageView;
 
 import pe.com.smartvet.R;
 import pe.com.smartvet.SmartVetApp;
-import pe.com.smartvet.fragments.ClinicHistoryFragment;
 import pe.com.smartvet.fragments.OwnerFragment;
 import pe.com.smartvet.fragments.PetFragment;
 import pe.com.smartvet.fragments.ProductFragment;
@@ -73,9 +72,6 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_user:
                 toolbar.setTitle(R.string.nav_option_user);
                 return new UserFragment();
-            case R.id.nav_clinic_histoy:
-                toolbar.setTitle(R.string.nav_option_clinic_history);
-                return new ClinicHistoryFragment();
             case R.id.nav_pet:
                 toolbar.setTitle(R.string.nav_option_pet);
                 return new PetFragment();
@@ -87,6 +83,9 @@ public class MainActivity extends AppCompatActivity
                 return new ProductFragment();
             case R.id.nav_report:
                 toolbar.setTitle(R.string.nav_option_report);
+                return new ReportFragment();
+            case R.id.nav_promo:
+                toolbar.setTitle(R.string.nav_option_promo);
                 return new ReportFragment();
         }
         return null;
@@ -145,8 +144,6 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_user) {
             navigateAccordingTo(id);
-        } else if (id == R.id.nav_clinic_histoy) {
-            navigateAccordingTo(id);
         }  else if (id == R.id.nav_pet) {
             navigateAccordingTo(id);
         }  else if (id == R.id.nav_owner) {
@@ -154,6 +151,8 @@ public class MainActivity extends AppCompatActivity
         }  else if (id == R.id.nav_product) {
             navigateAccordingTo(id);
         }  else if (id == R.id.nav_report) {
+            navigateAccordingTo(id);
+        }  else if (id == R.id.nav_promo) {
             navigateAccordingTo(id);
         } else if (id == R.id.nav_session) {
             SplashActivity.changeData(MainActivity.this,"user" ,"");

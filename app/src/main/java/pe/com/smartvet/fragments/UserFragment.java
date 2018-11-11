@@ -66,6 +66,7 @@ public class UserFragment extends Fragment {
     }
 
     public void userInformation() {
+        vet = SmartVetApp.getInstance().getVet();
         photoANImageView.setErrorImageResId(R.mipmap.ic_launcher);
         photoANImageView.setDefaultImageResId(R.mipmap.ic_launcher);
         photoANImageView.setImageUrl(vet.getPhoto());

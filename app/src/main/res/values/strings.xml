@@ -30,12 +30,18 @@
     <string name="nav_option_owner">Owners</string>
     <string name="nav_option_product">Products</string>
     <string name="nav_option_report">Reports</string>
+    <string name="nav_option_promo">Promotions</string>
     <string name="nav_option_log_out">Log out</string>
 
     <!-- AddProductActivity -->
     <string name="title_activity_add_product">AddProductActivity</string>
     <string name="product_save">Product save</string>
     <string name="error_product_save">Failed to save product</string>
+
+    <!-- RegisterActivity -->
+    <string name="title_activity_edit_user_profile">EditUserProfileActivity</string>
+    <string name="user_updated">User updated</string>
+    <string name="error_user_updated">Failed to update user</string>
 
     <!-- Hint -->
     <string name="email_hint">Email</string>
@@ -92,8 +98,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_about_product">AboutProductActivity</string>
-    <string name="title_activity_edit_user_profile">EditUserProfileActivity</string>
+
     <string name="title_activity_about_owner">AboutOwnerActivity</string>
+    <string name="title_activity_add_owner">AddOwnerActivity</string>
 
 
 </resources>
