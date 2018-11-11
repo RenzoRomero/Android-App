@@ -84,6 +84,7 @@ public class SplashActivity extends AppCompatActivity {
                         try {
                             SmartVetApp.getInstance().setToken("Bearer " + response.getString("token"));
                             SmartVetApp.getInstance().setVet(Vet.build(response.getJSONObject("vet")));
+                            SmartVetApp.getInstance().getVet().setPassword(getData(SplashActivity.this,"password"));
                             Toast.makeText(getApplicationContext(),  getString(R.string.hello) + " " + SmartVetApp.getInstance().getVet().getName(), Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(SplashActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
                             finish();

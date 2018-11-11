@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
-
     <application
         android:name=".SmartVetApp"
         android:icon="@mipmap/ic_launcher"
@@ -75,6 +74,15 @@
         <activity
             android:name=".activities.AboutOwnerActivity"
             android:label="@string/title_activity_about_owner"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.com.smartvet.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.AddOwnerActivity"
+            android:label="@string/title_activity_add_owner"
             android:parentActivityName=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

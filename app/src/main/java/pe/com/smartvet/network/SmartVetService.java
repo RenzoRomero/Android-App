@@ -7,6 +7,7 @@ import pe.com.smartvet.models.Vet;
 public class SmartVetService {
     public static String SIGNIN_VET_URL = "https://smart-vet.herokuapp.com/api/vet/signin";
     public static String SIGNUP_VET_URL = "https://smart-vet.herokuapp.com/api/vet/signup";
+    public static String VET_EDIT_URL = "https://smart-vet.herokuapp.com/api/vet/{vet_id}";
     public static String OWNER_URL = "https://smart-vet.herokuapp.com/api/owner";
     public static String PRODUCT_URL = "https://smart-vet.herokuapp.com/api/product";
 
