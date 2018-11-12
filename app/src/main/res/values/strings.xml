@@ -13,8 +13,8 @@
     <!-- RegisterActivity -->
     <string name="title_activity_register">RegisterActivity</string>
     <string name="select_spinner">Select</string>
-    <string name="user_saved">User saved</string>
-    <string name="user_exists">An account with this email already exists</string>
+    <string name="vet_saved">Vet saved</string>
+    <string name="vet_exists">An account with this email already exists</string>
     <string name="error_user_saved">Failed to save user</string>
 
     <!-- MainActivity -->
@@ -38,10 +38,15 @@
     <string name="product_save">Product save</string>
     <string name="error_product_save">Failed to save product</string>
 
-    <!-- RegisterActivity -->
+    <!-- EditUserProfileActivity -->
     <string name="title_activity_edit_user_profile">EditUserProfileActivity</string>
     <string name="user_updated">User updated</string>
     <string name="error_user_updated">Failed to update user</string>
+
+    <!-- AddOwnerActivity -->
+    <string name="title_activity_add_owner">AddOwnerActivity</string>
+    <string name="owner_saved">Owner saved</string>
+    <string name="owner_exists">An account with this email already exists</string>
 
     <!-- Hint -->
     <string name="email_hint">Email</string>
@@ -75,6 +80,7 @@
     <string name="invalid_address">Invalid address</string>
     <string name="invalid_mobilePhone">Invalid mobile phone</string>
     <string name="invalid_gender">Invalid gender</string>
+    <string name="invalid_photo">Invalid photo</string>
 
     <!-- Empty-->
     <string name="empty_brand">Complete brand</string>
@@ -94,13 +100,17 @@
     <string name="sample_description" translatable="false">Sample Description</string>
     <string name="sample_price" translatable="false">Sample Price</string>
     <string name="sample_quantity" translatable="false">Sample Quantity</string>
+    <string name="sample_breed" translatable="false">Sample Breed</string>
+    <string name="sample_birthdate" translatable="false">Sample Breed</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_about_product">AboutProductActivity</string>
 
     <string name="title_activity_about_owner">AboutOwnerActivity</string>
-    <string name="title_activity_add_owner">AddOwnerActivity</string>
+
+    <string name="title_activity_about_pet">AboutPetActivity</string>
+    <string name="title_activity_add_pet">AddPetActivity</string>
 
 
 </resources>

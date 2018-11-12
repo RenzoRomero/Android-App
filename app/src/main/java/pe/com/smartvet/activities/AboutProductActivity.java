@@ -57,5 +57,4 @@ public class AboutProductActivity extends AppCompatActivity {
         priceTextView.setText(("S/." + String.valueOf(product.getPrice())));
         quantityTextView.setText(String.valueOf(product.getQuantity()));
     }
-
 }

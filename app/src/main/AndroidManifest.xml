@@ -89,6 +89,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pe.com.smartvet.activities.MainActivity" />
         </activity>
+        <activity
+            android:name=".activities.AboutPetActivity"
+            android:label="@string/title_activity_about_pet"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.com.smartvet.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.AddPetActivity"
+            android:label="@string/title_activity_add_pet"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.com.smartvet.activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

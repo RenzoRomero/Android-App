@@ -1,8 +1,6 @@
 package pe.com.smartvet.activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -168,7 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             if (response.getString("message").equals("200")){
-                                Toast.makeText(getApplicationContext(), R.string.user_saved, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), R.string.vet_saved, Toast.LENGTH_SHORT).show();
                                 finish();
                                 signUpProgressBar.setVisibility(View.INVISIBLE);
                             } else {

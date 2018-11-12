@@ -1,5 +1,6 @@
 package pe.com.smartvet.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -26,6 +27,7 @@ import java.util.List;
 
 import pe.com.smartvet.R;
 import pe.com.smartvet.SmartVetApp;
+import pe.com.smartvet.activities.AddOwnerActivity;
 import pe.com.smartvet.adapters.OwnersAdapter;
 import pe.com.smartvet.models.Owner;
 import pe.com.smartvet.network.SmartVetService;
@@ -39,7 +41,6 @@ public class OwnerFragment extends Fragment implements SearchView.OnQueryTextLis
     private RecyclerView.LayoutManager ownersLayoutManager;
     private FloatingActionButton addOwnerFloatingActionButton;
     private List<Owner> ownerList;
-
 
     public OwnerFragment() {
         // Required empty public constructor
@@ -58,14 +59,14 @@ public class OwnerFragment extends Fragment implements SearchView.OnQueryTextLis
         ownersLayoutManager = new LinearLayoutManager(view.getContext());
         ownersRecyclerView.setAdapter(ownersAdapter);
         ownersRecyclerView.setLayoutManager(ownersLayoutManager);
-        /*addOwnerFloatingActionButton = view.findViewById(R.id.addOwnerFloatingActionButton);
+        addOwnerFloatingActionButton = view.findViewById(R.id.addOwnerFloatingActionButton);
         addOwnerFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 v.getContext()
                         .startActivity(new Intent(v.getContext(), AddOwnerActivity.class));
             }
-        });*/
+        });
         getOwners();
         return view;
     }

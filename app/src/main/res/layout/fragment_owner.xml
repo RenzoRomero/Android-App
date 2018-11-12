@@ -13,7 +13,7 @@
         android:layout_marginTop="60dp"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/addProductFloatingActionButton"
+        android:id="@+id/addOwnerFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

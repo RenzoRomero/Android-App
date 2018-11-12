@@ -5,6 +5,7 @@ import android.app.Application;
 import com.androidnetworking.AndroidNetworking;
 
 import pe.com.smartvet.models.Owner;
+import pe.com.smartvet.models.Pet;
 import pe.com.smartvet.models.Product;
 import pe.com.smartvet.models.Vet;
 import pe.com.smartvet.network.SmartVetService;
@@ -61,6 +62,15 @@ public class SmartVetApp extends Application {
 
     public SmartVetApp setProduct(Product product) {
         smartVetService.setCurrentProduct(product);
+        return this;
+    }
+
+    public Pet getPet() {
+        return smartVetService.getCurrentPet();
+    }
+
+    public SmartVetApp setPet(Pet pet) {
+        smartVetService.setCurrentPet(pet);
         return this;
     }
 }

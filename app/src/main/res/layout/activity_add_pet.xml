@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AddOwnerActivity">
+    tools:context=".activities.AddPetActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,26 +20,14 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="20dp">
-
-        <include layout="@layout/content_add_owner" />
-
-    </ScrollView>
+    <include layout="@layout/content_add_pet" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/addOwnerFloatingActionButton"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/ic_check_white_24dp"
-        app:elevation="6dp"
-        app:fabSize="normal"
-        android:onClick="createOvwnerClick" />
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </android.support.design.widget.CoordinatorLayout>

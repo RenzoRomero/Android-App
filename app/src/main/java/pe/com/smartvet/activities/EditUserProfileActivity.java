@@ -58,10 +58,11 @@ public class EditUserProfileActivity extends AppCompatActivity {
     boolean correctAddress = false;
     boolean correctMobilePhone = false;
     boolean correctGender = false;
+    boolean correctUrl = false;
 
     private static final int GALERY_INTENT = 1;
     private StorageReference storageReference;
-    private Uri url;
+    private Uri url = Uri.parse("");;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,8 +211,14 @@ public class EditUserProfileActivity extends AppCompatActivity {
             correctGender = true;
         }
 
+        if(vet.getPhoto().equals("")) {
+            Toast.makeText(getApplicationContext(), R.string.invalid_photo, Toast.LENGTH_SHORT).show();
+        } else {
+            correctUrl = true;
+        }
+
         if(correctEmail && correctPassword && correctName && correctLastName && correctMobilePhone
-                && correctAddress && correctGender) {
+                && correctAddress && correctGender && correctUrl) {
             updateVet();
         }
     }
@@ -226,6 +233,7 @@ public class EditUserProfileActivity extends AppCompatActivity {
                 .addBodyParameter("address", Objects.requireNonNull(addressTextInputLayout.getEditText()).getText().toString())
                 .addBodyParameter("mobilePhone", Objects.requireNonNull(mobilePhoneTextInputLayout.getEditText()).getText().toString())
                 .addBodyParameter("gender", genderSpinner.getSelectedItem().toString())
+                .addBodyParameter("photo", url.toString())
                 .setPriority(Priority.MEDIUM)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
