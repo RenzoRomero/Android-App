@@ -21,6 +21,7 @@ import pe.com.smartvet.SmartVetApp;
 import pe.com.smartvet.fragments.OwnerFragment;
 import pe.com.smartvet.fragments.PetFragment;
 import pe.com.smartvet.fragments.ProductFragment;
+import pe.com.smartvet.fragments.PromotionFragment;
 import pe.com.smartvet.fragments.ReportFragment;
 import pe.com.smartvet.fragments.UserFragment;
 import pe.com.smartvet.models.Vet;
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity
                 return new ReportFragment();
             case R.id.nav_promo:
                 toolbar.setTitle(R.string.nav_option_promo);
-                return new ReportFragment();
+                return new PromotionFragment();
         }
         return null;
     }

@@ -12,7 +12,9 @@ public class SmartVetService {
     public static String SIGNIN_OWNER_URL = "https://smart-vet.herokuapp.com/api/owner/signup";
     public static String OWNER_URL = "https://smart-vet.herokuapp.com/api/owner";
     public static String PRODUCT_URL = "https://smart-vet.herokuapp.com/api/product";
+    public static String PRODUCT_EDIT_URL = "https://smart-vet.herokuapp.com/api/product/{product_id}";
     public static String PET_URL = "https://smart-vet.herokuapp.com/api/pet";
+    public static String PROMOTION_URL = "https://smart-vet.herokuapp.com/api/promotion";
 
     private Vet currentVet;
     private String currentToken;

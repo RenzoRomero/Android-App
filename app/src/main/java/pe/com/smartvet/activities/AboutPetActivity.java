@@ -68,4 +68,19 @@ public class AboutPetActivity extends AppCompatActivity {
         birthdateTextView.setText(pet.getBirthdate());
         genderTextView.setText(pet.getGender());
     }
+
+    public void goToAddPetActivity(View v) {
+        v.getContext()
+                .startActivity(new Intent(v.getContext(),
+                        AddPetActivity.class));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setPetInformation();
+        if(SmartVetApp.getInstance().getPet() == null) {
+            finish();
+        }
+    }
 }

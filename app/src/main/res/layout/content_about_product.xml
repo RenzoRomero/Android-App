@@ -108,5 +108,4 @@
         android:layout_margin="16dp"
         android:text="@string/sample_quantity"/>
 
-
 </android.support.constraint.ConstraintLayout>

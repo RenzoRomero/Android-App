@@ -22,4 +22,16 @@
 
     <include layout="@layout/content_about_product" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/editProductFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_edit_white_24dp"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        android:onClick="goToAddProductActivity"/>
+
 </android.support.design.widget.CoordinatorLayout>

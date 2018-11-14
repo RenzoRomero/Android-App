@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">Smart-Vet</string>
+    <string name="owners">Owners</string>
+    <string name="pets">Pets</string>
+    <string name="choose_month">Choose a month</string>
+    <string name="export_PDF">Export to PDF</string>
+
     <string name="action_settings">Settings</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_list_pets">List Pets</string>
+    <string name="action_add_pet">Add Pet</string>
 
     <!-- SplashActivity -->
     <string name="internet_error">Please check your internet connection</string>
@@ -37,6 +45,8 @@
     <string name="title_activity_add_product">AddProductActivity</string>
     <string name="product_save">Product save</string>
     <string name="error_product_save">Failed to save product</string>
+    <string name="product_delete">Product deleted</string>
+    <string name="error_product_delete">Failed to delete product</string>
 
     <!-- EditUserProfileActivity -->
     <string name="title_activity_edit_user_profile">EditUserProfileActivity</string>
@@ -48,6 +58,11 @@
     <string name="owner_saved">Owner saved</string>
     <string name="owner_exists">An account with this email already exists</string>
 
+    <!-- AddPetActivity -->
+    <string name="title_activity_add_pet">AddPetActivity</string>
+    <string name="pet_save">Pet save</string>
+    <string name="error_pet_save">Failed to save pet</string>
+
     <!-- Hint -->
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
@@ -58,10 +73,15 @@
     <string name="gender_hint">Gender</string>
     <string name="man_gender">Man</string>
     <string name="women_gender">Woman</string>
+    <string name="male_gender">Male</string>
+    <string name="female_gender">Female</string>
     <string name="brand_hint">Brand</string>
     <string name="description_hint">Description</string>
     <string name="price_hint">Price</string>
     <string name="quantity_hint">Quantity</string>
+    <string name="breed_hint">Breed</string>
+    <string name="date_hint">Date</string>
+    <string name="date_format_hint">dd/mm/yyyy</string>
 
     <!-- Button -->
     <string name="signInButton">Login</string>
@@ -102,6 +122,8 @@
     <string name="sample_quantity" translatable="false">Sample Quantity</string>
     <string name="sample_breed" translatable="false">Sample Breed</string>
     <string name="sample_birthdate" translatable="false">Sample Breed</string>
+    <string name="sample_start_date" translatable="false">Sample Start Date</string>
+    <string name="sample_ending_date" translatable="false">Sample Ending Date</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -110,7 +132,6 @@
     <string name="title_activity_about_owner">AboutOwnerActivity</string>
 
     <string name="title_activity_about_pet">AboutPetActivity</string>
-    <string name="title_activity_add_pet">AddPetActivity</string>
 
 
 </resources>

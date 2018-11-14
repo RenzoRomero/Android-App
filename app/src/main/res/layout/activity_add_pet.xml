@@ -20,14 +20,26 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_add_pet" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="20dp">
+
+        <include layout="@layout/content_add_pet" />
+
+    </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/addOwnerFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_check_white_24dp"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        android:onClick="createPetClick" />
 
 </android.support.design.widget.CoordinatorLayout>

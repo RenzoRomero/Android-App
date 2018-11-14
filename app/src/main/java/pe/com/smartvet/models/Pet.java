@@ -17,11 +17,12 @@ public class Pet {
     private String birthdate;
     private String gender;
     private String status;
+    private String createDate;
 
     public Pet() {
     }
 
-    public Pet(String id, Owner owner, String name, String photo, String breed, String birthdate, String gender, String status) {
+    public Pet(String id, Owner owner, String name, String photo, String breed, String birthdate, String gender, String status, String createDate) {
         this.setId(id);
         this.setOwner(owner);
         this.setName(name);
@@ -30,6 +31,7 @@ public class Pet {
         this.setBirthdate(birthdate);
         this.setGender(gender);
         this.setStatus(status);
+        this.setCreateDate(createDate);
     }
 
     public String getId() {
@@ -104,6 +106,15 @@ public class Pet {
         return this;
     }
 
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public Pet setCreateDate(String createDate) {
+        this.createDate = createDate;
+        return this;
+    }
+
     public static Pet build(JSONObject jsonPet) {
         if(jsonPet == null) return null;
         Pet pet = new Pet();
@@ -116,6 +127,7 @@ public class Pet {
             pet.setBirthdate(jsonPet.getString("birthdate"));
             pet.setGender(jsonPet.getString("gender"));
             pet.setStatus(jsonPet.getString("status"));
+            pet.setCreateDate(jsonPet.getString("createDate"));
             return pet;
         } catch (JSONException e) {
             e.printStackTrace();

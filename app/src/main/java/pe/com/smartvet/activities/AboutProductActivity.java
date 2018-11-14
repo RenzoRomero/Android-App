@@ -1,5 +1,6 @@
 package pe.com.smartvet.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -56,5 +57,20 @@ public class AboutProductActivity extends AppCompatActivity {
         descriptionTextView.setText(product.getDescription());
         priceTextView.setText(("S/." + String.valueOf(product.getPrice())));
         quantityTextView.setText(String.valueOf(product.getQuantity()));
+    }
+
+    public void goToAddProductActivity(View v) {
+        v.getContext()
+                .startActivity(new Intent(v.getContext(),
+                        AddProductActivity.class));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setProductInformation();
+        if(SmartVetApp.getInstance().getProduct() == null) {
+            finish();
+        }
     }
 }
