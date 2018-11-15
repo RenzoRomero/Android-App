@@ -108,7 +108,34 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pe.com.smartvet.activities.AboutOwnerActivity" />
         </activity>
-        <activity android:name=".activities.PDFVisorActivity"></activity>
+        <activity android:name=".activities.PDFVisorActivity" />
+        <activity
+            android:name=".activities.ListPetsActivity"
+            android:label="@string/title_activity_list_pets"
+            android:parentActivityName=".activities.AboutOwnerActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.com.smartvet.activities.AboutOwnerActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ListClinicalHistoriesActivity"
+            android:label="@string/title_activity_list_clinical_histories"
+            android:parentActivityName=".activities.AboutPetActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.com.smartvet.activities.AboutPetActivity" />
+        </activity>
+        <activity
+            android:name=".AddClinicHistoryActivity"
+            android:label="@string/title_activity_add_clinic_history"
+            android:parentActivityName=".activities.AboutPetActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.com.smartvet.activities.AboutPetActivity" />
+        </activity>
     </application>
 
 </manifest>

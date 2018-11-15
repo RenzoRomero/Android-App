@@ -13,6 +13,7 @@ import com.androidnetworking.widget.ANImageView;
 
 import java.util.Objects;
 
+import pe.com.smartvet.AddClinicHistoryActivity;
 import pe.com.smartvet.R;
 import pe.com.smartvet.SmartVetApp;
 import pe.com.smartvet.models.Pet;
@@ -69,10 +70,10 @@ public class AboutPetActivity extends AppCompatActivity {
         genderTextView.setText(pet.getGender());
     }
 
-    public void goToAddPetActivity(View v) {
+    public void goToAddClinicHistoryActivity(View v) {
         v.getContext()
                 .startActivity(new Intent(v.getContext(),
-                        AddPetActivity.class));
+                        AddClinicHistoryActivity.class));
     }
 
     @Override

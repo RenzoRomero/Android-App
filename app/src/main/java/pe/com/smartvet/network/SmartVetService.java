@@ -14,6 +14,7 @@ public class SmartVetService {
     public static String PRODUCT_URL = "https://smart-vet.herokuapp.com/api/product";
     public static String PRODUCT_EDIT_URL = "https://smart-vet.herokuapp.com/api/product/{product_id}";
     public static String PET_URL = "https://smart-vet.herokuapp.com/api/pet";
+    public static String PET_OWNER_URL = "https://smart-vet.herokuapp.com/api/pet/owner/{owner_id}";
     public static String PROMOTION_URL = "https://smart-vet.herokuapp.com/api/promotion";
 
     private Vet currentVet;

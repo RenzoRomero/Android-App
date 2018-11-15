@@ -88,10 +88,10 @@ public class AboutOwnerActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_list_pets:
+                this.startActivity(new Intent(this, ListPetsActivity.class));
                 return true;
             case R.id.action_add_pet:
-                Intent intent = new Intent(this, AddPetActivity.class);
-                this.startActivity(intent);
+                this.startActivity(new Intent(this, AddPetActivity.class));
                 return true;
             default:
                 return super.onContextItemSelected(item);

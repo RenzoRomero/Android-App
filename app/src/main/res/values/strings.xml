@@ -132,6 +132,9 @@
     <string name="title_activity_about_owner">AboutOwnerActivity</string>
 
     <string name="title_activity_about_pet">AboutPetActivity</string>
+    <string name="title_activity_list_pets">ListPetsActivity</string>
+    <string name="title_activity_list_clinical_histories">ListClinicalHistoriesActivity</string>
+    <string name="title_activity_add_clinic_history">AddClinicHistoryActivity</string>
 
 
 </resources>
