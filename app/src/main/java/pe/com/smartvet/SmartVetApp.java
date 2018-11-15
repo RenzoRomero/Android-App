@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.androidnetworking.AndroidNetworking;
 
+import pe.com.smartvet.models.ClinicHistory;
 import pe.com.smartvet.models.Owner;
 import pe.com.smartvet.models.Pet;
 import pe.com.smartvet.models.Product;
@@ -71,6 +72,15 @@ public class SmartVetApp extends Application {
 
     public SmartVetApp setPet(Pet pet) {
         smartVetService.setCurrentPet(pet);
+        return this;
+    }
+
+    public ClinicHistory getClinicHistory() {
+        return smartVetService.getCurrentClinicHistory();
+    }
+
+    public SmartVetApp setClinicHistory(ClinicHistory clinicHistory) {
+        smartVetService.setCurrentClinicHistory(clinicHistory);
         return this;
     }
 }

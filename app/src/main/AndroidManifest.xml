@@ -128,13 +128,22 @@
                 android:value="pe.com.smartvet.activities.AboutPetActivity" />
         </activity>
         <activity
-            android:name=".AddClinicHistoryActivity"
+            android:name=".activities.AddClinicHistoryActivity"
             android:label="@string/title_activity_add_clinic_history"
             android:parentActivityName=".activities.AboutPetActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pe.com.smartvet.activities.AboutPetActivity" />
+        </activity>
+        <activity
+            android:name=".activities.AboutClinicHistoryActivity"
+            android:label="@string/title_activity_about_clinic_history"
+            android:parentActivityName=".activities.ListClinicalHistoriesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.com.smartvet.activities.ListClinicalHistoriesActivity" />
         </activity>
     </application>
 

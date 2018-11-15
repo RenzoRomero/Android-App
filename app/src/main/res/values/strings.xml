@@ -124,6 +124,7 @@
     <string name="sample_birthdate" translatable="false">Sample Breed</string>
     <string name="sample_start_date" translatable="false">Sample Start Date</string>
     <string name="sample_ending_date" translatable="false">Sample Ending Date</string>
+    <string name="sample_details" translatable="false">Sample Details</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -135,6 +136,7 @@
     <string name="title_activity_list_pets">ListPetsActivity</string>
     <string name="title_activity_list_clinical_histories">ListClinicalHistoriesActivity</string>
     <string name="title_activity_add_clinic_history">AddClinicHistoryActivity</string>
+    <string name="title_activity_about_clinic_history">AboutClinicHistoryActivity</string>
 
 
 </resources>

@@ -5,12 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activities.ListClinicalHistoriesActivity"
-    tools:showIn="@layout/activity_list_clinical_histories">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/clinicalHistoriesRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    tools:context=".activities.AboutClinicHistoryActivity"
+    tools:showIn="@layout/activity_about_clinic_history">
 
 </android.support.constraint.ConstraintLayout>

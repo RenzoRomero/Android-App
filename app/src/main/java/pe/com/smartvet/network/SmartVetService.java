@@ -1,5 +1,6 @@
 package pe.com.smartvet.network;
 
+import pe.com.smartvet.models.ClinicHistory;
 import pe.com.smartvet.models.Owner;
 import pe.com.smartvet.models.Pet;
 import pe.com.smartvet.models.Product;
@@ -22,6 +23,7 @@ public class SmartVetService {
     private Owner currentOwner;
     private Product currentProduct;
     private Pet currentPet;
+    private ClinicHistory currentClinicHistory;
 
     public Vet getCurrentVet() {
         return currentVet;
@@ -65,6 +67,15 @@ public class SmartVetService {
 
     public SmartVetService setCurrentPet(Pet currentPet) {
         this.currentPet = currentPet;
+        return this;
+    }
+
+    public ClinicHistory getCurrentClinicHistory() {
+        return currentClinicHistory;
+    }
+
+    public SmartVetService setCurrentClinicHistory(ClinicHistory currentClinicHistory) {
+        this.currentClinicHistory = currentClinicHistory;
         return this;
     }
 }

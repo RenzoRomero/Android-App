@@ -1,4 +1,4 @@
-package pe.com.smartvet;
+package pe.com.smartvet.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,12 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class AddClinicHistoryActivity extends AppCompatActivity {
+import pe.com.smartvet.R;
+
+public class AboutClinicHistoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_clinic_history);
+        setContentView(R.layout.activity_about_clinic_history);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
