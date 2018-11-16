@@ -73,10 +73,10 @@ public class UserFragment extends Fragment {
         displayNameTextView.setText(vet.getName() + " " + vet.getLastName());
         emailTextView.setText(vet.getEmail());
         mobilePhoneTextView.setText((vet.getMobilePhone().toString()));
-        if (vet.getGender().equals(getResources().getString(R.string.man_gender))) {
+        if (vet.getGender().equals("Man") || vet.getGender().equals("Hombre")) {
             genderTextView.setText(getResources().getString(R.string.man_gender));
         } else {
-            if (vet.getGender().equals(getResources().getString(R.string.women_gender))) {
+            if (vet.getGender().equals("Woman") || vet.getGender().equals("Mujer")) {
                 genderTextView.setText(getResources().getString(R.string.women_gender));
             } else {
                 genderTextView.setText("");

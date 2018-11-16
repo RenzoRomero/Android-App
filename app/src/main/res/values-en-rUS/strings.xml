@@ -1,37 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Smart-Vet</string>
+
     <string name="owners">Owners</string>
     <string name="pets">Pets</string>
     <string name="choose_month">Choose a month</string>
     <string name="export_PDF">Export to PDF</string>
-
     <string name="action_settings">Settings</string>
     <string name="action_delete">Delete</string>
     <string name="action_list_pets">List Pets</string>
     <string name="action_add_pet">Add Pet</string>
     <string name="action_list_clincal_histories">List Clinical Histories</string>
-
-    <!-- SplashActivity -->
     <string name="internet_error">Please check your internet connection</string>
-
-    <!-- LoginActivity -->
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login">Login</string>
     <string name="incorrect_login">User or password incorrect</string>
     <string name="hello">Hello</string>
-
-    <!-- RegisterActivity -->
-    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_register">Register</string>
     <string name="select_spinner">Select</string>
     <string name="vet_saved">Vet saved</string>
     <string name="vet_exists">An account with this email already exists</string>
-    <string name="error_vet_saved">Failed to save vet</string>
-
-    <!-- MainActivity -->
-    <string name="title_activity_main">MainActivity</string>
+    <string name="error_vet_saved">Failed to save user</string>
+    <string name="title_activity_main">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title" translatable="false">Android Studio</string>
-    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="nav_option_user">User</string>
     <string name="nav_option_clinic_history">Clinic history</string>
@@ -41,35 +31,23 @@
     <string name="nav_option_report">Reports</string>
     <string name="nav_option_promo">Promotions</string>
     <string name="nav_option_log_out">Log out</string>
-
-    <!-- AddProductActivity -->
-    <string name="title_activity_add_product">AddProductActivity</string>
+    <string name="title_activity_add_product">Add Product</string>
     <string name="product_save">Product save</string>
     <string name="error_product_save">Failed to save product</string>
     <string name="product_delete">Product deleted</string>
     <string name="error_product_delete">Failed to delete product</string>
-
-    <!-- EditUserProfileActivity -->
-    <string name="title_activity_edit_user_profile">EditUserProfileActivity</string>
+    <string name="title_activity_edit_user_profile">Edit User Profile</string>
     <string name="user_updated">User updated</string>
     <string name="error_user_updated">Failed to update user</string>
-
-    <!-- AddOwnerActivity -->
-    <string name="title_activity_add_owner">AddOwnerActivity</string>
+    <string name="title_activity_add_owner">Add Owner</string>
     <string name="owner_saved">Owner saved</string>
     <string name="owner_exists">An account with this email already exists</string>
-
-    <!-- AddPetActivity -->
-    <string name="title_activity_add_pet">AddPetActivity</string>
+    <string name="title_activity_add_pet">Add Pet</string>
     <string name="pet_save">Pet save</string>
     <string name="error_pet_save">Failed to save pet</string>
-
-    <!-- AddClinicHistoryActivity -->
-    <string name="title_activity_add_clinic_history">AddClinicHistoryActivity</string>
+    <string name="title_activity_add_clinic_history">Add Clinic History</string>
     <string name="clinic_history_save">Clinic History save</string>
     <string name="error_clinic_history_save">Failed to save Clinic History</string>
-
-    <!-- Hint -->
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="name_hint">Name</string>
@@ -87,12 +65,9 @@
     <string name="quantity_hint">Quantity</string>
     <string name="breed_hint">Breed</string>
     <string name="date_hint">Date</string>
-    <string name="date_format_hint" translatable="false">dd/mm/yyyy</string>
     <string name="weight_hint">Weight</string>
     <string name="height_hint">Height</string>
     <string name="details_hint">Details</string>
-
-    <!-- Button -->
     <string name="signInButton">Login</string>
     <string name="signUpTextView"><u>No account yet? Create one</u></string>
     <string name="signUpButton">Create account</string>
@@ -100,8 +75,6 @@
     <string name="cancelButton">Cancel</string>
     <string name="acceptButton">Accept</string>
     <string name="galeryButton">Galery</string>
-
-    <!-- Invalid -->
     <string name="invalid_email">Complete email</string>
     <string name="invalid_password">Complete password</string>
     <string name="invalid_name">Invalid name</string>
@@ -110,8 +83,6 @@
     <string name="invalid_mobilePhone">Invalid mobile phone</string>
     <string name="invalid_gender">Invalid gender</string>
     <string name="invalid_photo">Invalid photo</string>
-
-    <!-- Empty-->
     <string name="empty_brand">Complete brand</string>
     <string name="empty_name">Complete name</string>
     <string name="empty_description">Complete description</string>
@@ -121,36 +92,10 @@
     <string name="empty_height">Complete height</string>
     <string name="empty_detail">Complete detail</string>
     <string name="empty_photo">Choose a picture</string>
-
-    <!-- Samples -->
-    <string name="sample_email" translatable="false">Sample Email</string>
-    <string name="sample_phone" translatable="false">Sample Phone</string>
-    <string name="sample_gender" translatable="false">Sample Gender</string>
-    <string name="sample_address" translatable="false">Sample Address</string>
-    <string name="sample_brand" translatable="false">Sample Brand</string>
-    <string name="sample_name" translatable="false">Sample Name</string>
-    <string name="sample_description" translatable="false">Sample Description</string>
-    <string name="sample_price" translatable="false">Sample Price</string>
-    <string name="sample_quantity" translatable="false">Sample Quantity</string>
-    <string name="sample_breed" translatable="false">Sample Breed</string>
-    <string name="sample_birthdate" translatable="false">Sample Breed</string>
-    <string name="sample_start_date" translatable="false">Sample Start Date</string>
-    <string name="sample_ending_date" translatable="false">Sample Ending Date</string>
-    <string name="sample_details" translatable="false">Sample Details</string>
-    <string name="sample_date" translatable="false">Sample Date</string>
-    <string name="sample_weight" translatable="false">Sample Weight</string>
-    <string name="sample_height" translatable="false">Sample Height</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="title_activity_about_product">AboutProductActivity</string>
-
-    <string name="title_activity_about_owner">AboutOwnerActivity</string>
-
-    <string name="title_activity_about_pet">AboutPetActivity</string>
-    <string name="title_activity_list_pets">ListPetsActivity</string>
-    <string name="title_activity_list_clinical_histories">ListClinicalHistoriesActivity</string>
-    <string name="title_activity_about_clinic_history">AboutClinicHistoryActivity</string>
-
-
+    <string name="title_activity_about_product" translatable="false">About Product</string>
+    <string name="title_activity_about_owner">About Owner</string>
+    <string name="title_activity_about_pet">About Pet</string>
+    <string name="title_activity_list_pets">List Pets</string>
+    <string name="title_activity_list_clinical_histories">List Clinical Histories</string>
+    <string name="title_activity_about_clinic_history">About Clinic History</string>
 </resources>

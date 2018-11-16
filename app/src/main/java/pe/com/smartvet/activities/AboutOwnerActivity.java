@@ -66,10 +66,10 @@ public class AboutOwnerActivity extends AppCompatActivity {
         displayNameTextView.setText(owner.getName() + " " + owner.getLastName());
         emailTextView.setText(owner.getEmail());
         mobilePhoneTextView.setText((owner.getMobilePhone().toString()));
-        if (owner.getGender().equals(getResources().getString(R.string.man_gender))) {
+        if (owner.getGender().equals("Man") || owner.getGender().equals("Hombre")) {
             genderTextView.setText(getResources().getString(R.string.man_gender));
         } else {
-            if (owner.getGender().equals(getResources().getString(R.string.women_gender))) {
+            if (owner.getGender().equals("Woman") || owner.getGender().equals("Mujer")) {
                 genderTextView.setText(getResources().getString(R.string.women_gender));
             } else {
                 genderTextView.setText("");

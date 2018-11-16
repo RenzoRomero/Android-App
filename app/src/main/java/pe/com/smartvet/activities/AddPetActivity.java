@@ -209,12 +209,20 @@ public class AddPetActivity extends AppCompatActivity {
     }
 
     private void savePet() {
+        String genderPet = "";
+        if (genderSpinner.getSelectedItem().toString().equals("Male") || genderSpinner.getSelectedItem().toString().equals("Macho")) {
+            genderPet = "Male";
+        } else {
+            if (genderSpinner.getSelectedItem().toString().equals("Female") || genderSpinner.getSelectedItem().toString().equals("Hembra")) {
+                genderPet = "Female";
+            }
+        }
         AndroidNetworking.post(SmartVetService.PET_URL)
                 .addBodyParameter("name", Objects.requireNonNull(nameTextInputLayout.getEditText()).getText().toString())
                 .addBodyParameter("breed", Objects.requireNonNull(breedTextInputLayout.getEditText()).getText().toString())
                 .addBodyParameter("owner", SmartVetApp.getInstance().getOwner().getId())
                 .addBodyParameter("birthdate", dateEditText.getText().toString())
-                .addBodyParameter("gender", genderSpinner.getSelectedItem().toString())
+                .addBodyParameter("gender", genderPet)
                 .addBodyParameter("photo", url.toString())
                 .addHeaders("Authorization", SmartVetApp.getInstance().getToken())
                 .setPriority(Priority.MEDIUM)

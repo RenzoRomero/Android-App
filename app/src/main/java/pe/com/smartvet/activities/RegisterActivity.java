@@ -170,7 +170,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 finish();
                                 signUpProgressBar.setVisibility(View.INVISIBLE);
                             } else {
-                                Toast.makeText(getApplicationContext(), R.string.error_user_saved, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), R.string.error_vet_saved, Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -178,7 +178,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                     @Override
                     public void onError(ANError error) {
-                        Toast.makeText(getApplicationContext(), R.string.error_user_saved, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.error_vet_saved, Toast.LENGTH_SHORT).show();
                         signUpProgressBar.setVisibility(View.INVISIBLE);
                     }
                 });

@@ -3,6 +3,7 @@ package pe.com.smartvet.activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +32,17 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.regex.Pattern;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import pe.com.smartvet.R;
 import pe.com.smartvet.network.SmartVetService;
@@ -59,6 +70,10 @@ public class AddOwnerActivity extends AppCompatActivity {
     private static final int GALERY_INTENT = 1;
     private StorageReference storageReference;
     private Uri url = Uri.parse("");
+
+    String email = "sos.mascotas.smartvet@gmail.com";
+    String password = "smartvet123";
+    Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,11 +194,19 @@ public class AddOwnerActivity extends AppCompatActivity {
 
         if(correctEmail && correctName && correctLastName && correctMobilePhone
                 && correctAddress && correctGender) {
-            createOnwer();
+            createOwner();
         }
     }
 
-    private void createOnwer() {
+    private void createOwner() {
+        String genderOwner = "";
+        if (genderSpinner.getSelectedItem().toString().equals("Man") || genderSpinner.getSelectedItem().toString().equals("Hombre")) {
+            genderOwner = "Man";
+        } else {
+            if (genderSpinner.getSelectedItem().toString().equals("Woman") || genderSpinner.getSelectedItem().toString().equals("Mujer")) {
+                genderOwner = "Woman";
+            }
+        }
         AndroidNetworking.post(SmartVetService.SIGNIN_OWNER_URL)
                 .addBodyParameter("email", Objects.requireNonNull(emailTextInputLayout.getEditText()).getText().toString())
                 .addBodyParameter("name", Objects.requireNonNull(nameTextInputLayout.getEditText()).getText().toString())
@@ -191,7 +214,7 @@ public class AddOwnerActivity extends AppCompatActivity {
                 .addBodyParameter("password", "smartvetowner")
                 .addBodyParameter("address", Objects.requireNonNull(addressTextInputLayout.getEditText()).getText().toString())
                 .addBodyParameter("mobilePhone", Objects.requireNonNull(mobilePhoneTextInputLayout.getEditText()).getText().toString())
-                .addBodyParameter("gender", genderSpinner.getSelectedItem().toString())
+                .addBodyParameter("gender", genderOwner)
                 .addBodyParameter("photo", url.toString())
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -201,9 +224,10 @@ public class AddOwnerActivity extends AppCompatActivity {
                         try {
                             if (response.getString("message").equals("200")){
                                 Toast.makeText(getApplicationContext(), R.string.vet_saved, Toast.LENGTH_SHORT).show();
+                                sendMail();
                                 finish();
                             } else {
-                                Toast.makeText(getApplicationContext(), R.string.error_user_saved, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), R.string.error_vet_saved, Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -211,8 +235,45 @@ public class AddOwnerActivity extends AppCompatActivity {
                     }
                     @Override
                     public void onError(ANError error) {
-                        Toast.makeText(getApplicationContext(), R.string.error_user_saved, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.error_vet_saved, Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void sendMail() {
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", "smtp.googlemail.com");
+        properties.put("mail.smtp.socketFactory.port", "465");
+        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.port", "465");
+
+        session = Session.getDefaultInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(email, password);
+            }
+        });
+
+        if(session != null) {
+            Message message = new MimeMessage(session);
+            try {
+                message.setFrom(new InternetAddress(email));
+                message.setSubject("Smart-Vet: Bienvenido");
+                message.setRecipients(Message.RecipientType.TO,
+                        InternetAddress.parse(Objects.requireNonNull(emailTextInputLayout.getEditText()).getText().toString()));
+                message.setContent(Objects.requireNonNull(nameTextInputLayout.getEditText()).getText().toString() + " "
+                        + Objects.requireNonNull(lastNameTextInputLayout.getEditText()).getText().toString() +
+                        ", ha sido registrado en el sistema de Smart-Vet de la clínica SOS Mascotas", "text/html; charset=utf-8");
+                Transport.send(message);
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+        }
+        finish();
     }
 }
