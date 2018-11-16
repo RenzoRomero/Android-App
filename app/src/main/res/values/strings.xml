@@ -82,6 +82,9 @@
     <string name="breed_hint">Breed</string>
     <string name="date_hint">Date</string>
     <string name="date_format_hint">dd/mm/yyyy</string>
+    <string name="weight_hint">Weight</string>
+    <string name="height_hint">Height</string>
+    <string name="details_hint">Details</string>
 
     <!-- Button -->
     <string name="signInButton">Login</string>
@@ -108,6 +111,9 @@
     <string name="empty_description">Complete description</string>
     <string name="empty_price">Complete price</string>
     <string name="empty_quantity">Complete quantity</string>
+    <string name="empty_weight">Complete weight</string>
+    <string name="empty_height">Complete height</string>
+    <string name="empty_detail">Complete detail</string>
     <string name="empty_photo">Choose a picture</string>
 
     <!-- Samples -->
