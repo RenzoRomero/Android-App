@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -65,6 +68,23 @@ public class AboutPetActivity extends AppCompatActivity {
         breedTextView.setText(pet.getBreed());
         birthdateTextView.setText(pet.getBirthdate());
         genderTextView.setText(pet.getGender());
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_pet, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_list_clincal_histories:
+                this.startActivity(new Intent(this, ListClinicalHistoriesActivity.class));
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
     }
 
     public void goToAddClinicHistoryActivity(View v) {

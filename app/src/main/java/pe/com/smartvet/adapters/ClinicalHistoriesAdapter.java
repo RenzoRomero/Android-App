@@ -33,7 +33,7 @@ public class ClinicalHistoriesAdapter extends RecyclerView.Adapter<ClinicalHisto
     @NonNull
     @Override
     public ClinicalHistoriesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new ClinicalHistoriesAdapter.ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_owner, viewGroup, false));
+        return new ClinicalHistoriesAdapter.ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_clinic_history, viewGroup, false));
     }
 
     @Override
@@ -43,7 +43,7 @@ public class ClinicalHistoriesAdapter extends RecyclerView.Adapter<ClinicalHisto
         holder.photoClinicHistoryANImageView.setErrorImageResId(R.mipmap.ic_launcher);
         holder.photoClinicHistoryANImageView.setDefaultImageResId(R.mipmap.ic_launcher);
         holder.photoClinicHistoryANImageView.setImageUrl(clinicalHistoriesList.get(position).getPet().getPhoto());
-        holder.detailsTextView.setText(clinicalHistoriesList.get(position).getDetails());
+        holder.detailsTextView.setText(clinicalHistoriesList.get(position).getDate());
         holder.photoClinicHistoryANImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

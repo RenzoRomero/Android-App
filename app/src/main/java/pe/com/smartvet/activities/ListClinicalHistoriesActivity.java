@@ -9,12 +9,22 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import pe.com.smartvet.R;
+import pe.com.smartvet.SmartVetApp;
 import pe.com.smartvet.adapters.ClinicalHistoriesAdapter;
 import pe.com.smartvet.models.ClinicHistory;
+import pe.com.smartvet.network.SmartVetService;
 
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 
@@ -42,7 +52,33 @@ public class ListClinicalHistoriesActivity extends AppCompatActivity {
         clinicalHistoriesLayoutManager = new GridLayoutManager(this , spanCount);
         clinicalHistoriesRecyclerView.setAdapter(clinicalHistoriesAdapter);
         clinicalHistoriesRecyclerView.setLayoutManager(clinicalHistoriesLayoutManager);
-        //updateClincalHistories();
+        getClinicalHistories();
+    }
+
+    public void getClinicalHistories() {
+        AndroidNetworking
+                .get(SmartVetService.CLINIC_HISTORY_PET_URL)
+                .addPathParameter("pet_id", SmartVetApp.getInstance().getPet().getId())
+                .addHeaders("Authorization", SmartVetApp.getInstance().getToken())
+                .setPriority(Priority.MEDIUM)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            clinicalHistories = ClinicHistory.build(response.getJSONArray("clinicalHistories"));
+                            clinicalHistoriesAdapter.setClinicalHistories(clinicalHistories);
+                            clinicalHistoriesAdapter.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                    }
+                });
     }
 
 }

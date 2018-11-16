@@ -9,6 +9,7 @@
     <string name="action_delete">Delete</string>
     <string name="action_list_pets">List Pets</string>
     <string name="action_add_pet">Add Pet</string>
+    <string name="action_list_clincal_histories">List Clinical Histories</string>
 
     <!-- SplashActivity -->
     <string name="internet_error">Please check your internet connection</string>
@@ -62,6 +63,11 @@
     <string name="title_activity_add_pet">AddPetActivity</string>
     <string name="pet_save">Pet save</string>
     <string name="error_pet_save">Failed to save pet</string>
+
+    <!-- AddClinicHistoryActivity -->
+    <string name="title_activity_add_clinic_history">AddClinicHistoryActivity</string>
+    <string name="clinic_history_save">Clinic History save</string>
+    <string name="error_clinic_history_save">Failed to save Clinic History</string>
 
     <!-- Hint -->
     <string name="email_hint">Email</string>
@@ -131,6 +137,9 @@
     <string name="sample_start_date" translatable="false">Sample Start Date</string>
     <string name="sample_ending_date" translatable="false">Sample Ending Date</string>
     <string name="sample_details" translatable="false">Sample Details</string>
+    <string name="sample_date" translatable="false">Sample Date</string>
+    <string name="sample_weight" translatable="false">Sample Weight</string>
+    <string name="sample_height" translatable="false">Sample Height</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -141,7 +150,6 @@
     <string name="title_activity_about_pet">AboutPetActivity</string>
     <string name="title_activity_list_pets">ListPetsActivity</string>
     <string name="title_activity_list_clinical_histories">ListClinicalHistoriesActivity</string>
-    <string name="title_activity_add_clinic_history">AddClinicHistoryActivity</string>
     <string name="title_activity_about_clinic_history">AboutClinicHistoryActivity</string>
 
 

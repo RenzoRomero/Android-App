@@ -98,7 +98,7 @@ public class AddClinicHistoryActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void createPetClick(View view) {
+    public void createClinicHistoryClick(View view) {
         if(Objects.requireNonNull(weightTextInputLayout.getEditText()).getText().toString().length() == 0) {
             weightTextInputLayout.setError(getResources().getString(R.string.empty_weight));
             correctWeight = false;
@@ -129,7 +129,7 @@ public class AddClinicHistoryActivity extends AppCompatActivity {
     }
 
     private void saveClinicHistory() {
-        AndroidNetworking.post(SmartVetService.CLINICAL_HISTORY_URL)
+        AndroidNetworking.post(SmartVetService.CLINIC_HISTORY_URL)
                 .addBodyParameter("pet", SmartVetApp.getInstance().getPet().getId())
                 .addBodyParameter("date", dateEditText.getText().toString())
                 .addBodyParameter("weight", Objects.requireNonNull(weightTextInputLayout.getEditText()).getText().toString())
@@ -141,12 +141,12 @@ public class AddClinicHistoryActivity extends AppCompatActivity {
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Toast.makeText(getApplicationContext(), R.string.pet_save, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.clinic_history_save, Toast.LENGTH_SHORT).show();
                         finish();
                     }
                     @Override
                     public void onError(ANError error) {
-                        Toast.makeText(getApplicationContext(), R.string.error_pet_save, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.error_clinic_history_save, Toast.LENGTH_SHORT).show();
                     }
                 });
     }
