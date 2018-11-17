@@ -42,7 +42,7 @@ public class ClinicalHistoriesAdapter extends RecyclerView.Adapter<ClinicalHisto
 
         holder.photoClinicHistoryANImageView.setErrorImageResId(R.mipmap.ic_launcher);
         holder.photoClinicHistoryANImageView.setDefaultImageResId(R.mipmap.ic_launcher);
-        holder.photoClinicHistoryANImageView.setImageUrl(clinicalHistoriesList.get(position).getPet().getPhoto());
+        holder.photoClinicHistoryANImageView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/smart-vet.appspot.com/o/recursos%2FHistoria-Clinica-2.jpg?alt=media&token=fd5d529f-3962-4b9b-8312-e995ba1a5a16");
         holder.detailsTextView.setText(clinicalHistoriesList.get(position).getDate());
         holder.photoClinicHistoryANImageView.setOnClickListener(new View.OnClickListener() {
             @Override

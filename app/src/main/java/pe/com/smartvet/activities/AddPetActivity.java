@@ -131,7 +131,7 @@ public class AddPetActivity extends AppCompatActivity {
 
         if ( requestCode == GALERY_INTENT && resultCode == RESULT_OK) {
             Uri uriSavedImage = data.getData();
-            final StorageReference filepath = storageReference.child("product").child(Objects.requireNonNull(uriSavedImage.getLastPathSegment()));
+            final StorageReference filepath = storageReference.child("pet").child(Objects.requireNonNull(uriSavedImage.getLastPathSegment()));
             UploadTask uploadTask = filepath.putFile(uriSavedImage);
 
             Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
