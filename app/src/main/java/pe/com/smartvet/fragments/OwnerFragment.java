@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -32,6 +33,8 @@ import pe.com.smartvet.adapters.OwnersAdapter;
 import pe.com.smartvet.models.Owner;
 import pe.com.smartvet.network.SmartVetService;
 
+import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -41,6 +44,7 @@ public class OwnerFragment extends Fragment implements SearchView.OnQueryTextLis
     private RecyclerView.LayoutManager ownersLayoutManager;
     private FloatingActionButton addOwnerFloatingActionButton;
     private List<Owner> ownerList;
+    private int spanCount = 2;
 
     public OwnerFragment() {
         // Required empty public constructor
@@ -56,7 +60,8 @@ public class OwnerFragment extends Fragment implements SearchView.OnQueryTextLis
         ownersRecyclerView = view.findViewById(R.id.ownersRecyclerView);
         ownerList = new ArrayList<>();
         ownersAdapter = (new OwnersAdapter()).setOwners(ownerList);
-        ownersLayoutManager = new LinearLayoutManager(view.getContext());
+        spanCount = getResources().getConfiguration().orientation == ORIENTATION_PORTRAIT ? 2 : 3;
+        ownersLayoutManager = new GridLayoutManager(view.getContext() , spanCount);
         ownersRecyclerView.setAdapter(ownersAdapter);
         ownersRecyclerView.setLayoutManager(ownersLayoutManager);
         addOwnerFloatingActionButton = view.findViewById(R.id.addOwnerFloatingActionButton);

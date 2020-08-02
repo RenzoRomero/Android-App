@@ -7,18 +7,18 @@ import pe.com.smartvet.models.Product;
 import pe.com.smartvet.models.Vet;
 
 public class SmartVetService {
-    public static String SIGNIN_VET_URL = "https://smart-vet.herokuapp.com/api/vet/signin";
-    public static String SIGNUP_VET_URL = "https://smart-vet.herokuapp.com/api/vet/signup";
-    public static String VET_EDIT_URL = "https://smart-vet.herokuapp.com/api/vet/{vet_id}";
-    public static String SIGNIN_OWNER_URL = "https://smart-vet.herokuapp.com/api/owner/signup";
-    public static String OWNER_URL = "https://smart-vet.herokuapp.com/api/owner";
-    public static String PRODUCT_URL = "https://smart-vet.herokuapp.com/api/product";
-    public static String PRODUCT_EDIT_URL = "https://smart-vet.herokuapp.com/api/product/{product_id}";
-    public static String PET_URL = "https://smart-vet.herokuapp.com/api/pet";
-    public static String PET_OWNER_URL = "https://smart-vet.herokuapp.com/api/pet/owner/{owner_id}";
-    public static String PROMOTION_URL = "https://smart-vet.herokuapp.com/api/promotion";
-    public static String CLINIC_HISTORY_URL = "https://smart-vet.herokuapp.com/api/clinicHistory";
-    public static String CLINIC_HISTORY_PET_URL = "https://smart-vet.herokuapp.com/api/clinicHistory/pet/{pet_id}";
+    public static String SIGNIN_VET_URL = "https://smart-vet-app.herokuapp.com/api/vet/signin";
+    public static String SIGNUP_VET_URL = "https://smart-vet-app.herokuapp.com/api/vet/signup";
+    public static String VET_EDIT_URL = "https://smart-vet-app.herokuapp.com/api/vet/{vet_id}";
+    public static String SIGNIN_OWNER_URL = "https://smart-vet-app.herokuapp.com/api/owner/signup";
+    public static String OWNER_URL = "https://smart-vet-app.herokuapp.com/api/owner";
+    public static String PRODUCT_URL = "https://smart-vet-app.herokuapp.com/api/product";
+    public static String PRODUCT_EDIT_URL = "https://smart-vet-app.herokuapp.com/api/product/{product_id}";
+    public static String PET_URL = "https://smart-vet-app.herokuapp.com/api/pet";
+    public static String PET_OWNER_URL = "https://smart-vet-app.herokuapp.com/api/pet/owner/{owner_id}";
+    public static String PROMOTION_URL = "https://smart-vet-app.herokuapp.com/api/promotion";
+    public static String CLINIC_HISTORY_URL = "https://smart-vet-app.herokuapp.com/api/clinicHistory";
+    public static String CLINIC_HISTORY_PET_URL = "https://smart-vet-app.herokuapp.com/api/clinicHistory/pet/{pet_id}";
 
     private Vet currentVet;
     private String currentToken;
